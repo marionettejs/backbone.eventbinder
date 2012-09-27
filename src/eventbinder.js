@@ -9,6 +9,7 @@
 // Inspired by [Johnny Oshika](http://stackoverflow.com/questions/7567404/backbone-js-repopulate-or-recreate-the-view/7607853#7607853)
 
 Backbone.EventBinder = (function(Backbone, _){
+  "use strict";
   
   // Constructor function
   var EventBinder = function(){
