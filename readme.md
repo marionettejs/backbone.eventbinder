@@ -38,7 +38,20 @@ events, across any number of objects that trigger the events. This allows
 events to be grouped together and unbound with a single call during the 
 clean-up of an object that is bound to the events.
 
+Ultimately, the EventBinder calls back to the standard Backbone `on` method
+of the object for which events are being handled. The benefit of using the
+EventBinder then, is that you no longer have to manually manage calling `off`
+for each of these events, and you can safely use anonymous callback functions
+as event arguments and stil be able to unbind them when needed.
+
 ### Bind Events
+
+The basic syntax for binding events is to use the `bindTo` method which 
+follows the path of Backbone's `on` method for events, but adds one parameter 
+to the beginning of the method call: the object that triggers the event.
+
+For example, if you have a model that you want to listen for events from,
+you can use the EventBinder to manage the event for you:
 
 ```js
 var binder = new Backbone.EventBinder();
@@ -46,14 +59,17 @@ var binder = new Backbone.EventBinder();
 var model = new MyModel();
 
 var handler = {
-  doIt: function(){}
+  doIt: function(){ /* ... */ }
 }
 
-binder.bindTo(model, "change:foo", handler.doIt);
+// same args list as model.on, but putting the model as the first parameter
+binder.bindTo(model, "change:foo", handler.doIt, handler);
 ```
 
-You can optionally specify a 4th parameter as the context in which the callback
-method for the event will be executed:
+You can specify a 4th parameter as the context in which the callback
+method for the event will be executed. If you leave the empty, the default
+context will be used (varies depending on other circumstances) just like
+Backbone's events. 
 
 ```js
 binder.bindTo(model, "change:foo", someCallback, someContext);
