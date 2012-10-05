@@ -1,4 +1,4 @@
-describe("event binder", function(){
+describe("Default event binder logic", function(){
   var Model = Backbone.Model;
 
   describe("when binding an event", function(){
