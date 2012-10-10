@@ -156,6 +156,34 @@ describe("Default event binder logic", function(){
       });
     });
 
+    describe("unbinding all events for an object", function(){
+      var handler, binder, model;
+
+      beforeEach(function(){
+        handler = jasmine.createSpy();
+        binder = new Backbone.EventBinder();
+        model = new Model();
+
+        binder.bindTo(model, 'bound-event', handler);
+      });
+
+      it("unbinds from the object", function(){
+        binder.unbindAllOn(model);
+
+        model.trigger('bound-event');
+
+        expect(handler).not.toHaveBeenCalled();
+      });
+
+      it("leaves other bindings alone", function(){
+        binder.unbindAllOn({});
+
+        model.trigger('bound-event');
+
+        expect(handler).toHaveBeenCalled();
+      });
+    });
+
     describe("no context (default context of the bindTo object itself), and unbinding one of them", function(){
       var handler = {
         doIt: function(){}

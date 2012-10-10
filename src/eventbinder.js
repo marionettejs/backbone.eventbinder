@@ -4,7 +4,7 @@
 // The event binder facilitates the binding and unbinding of events
 // from objects that extend `Backbone.Events`. It makes
 // unbinding events, even with anonymous callback functions,
-// easy. 
+// easy.
 //
 // Inspired by [Johnny Oshika](http://stackoverflow.com/questions/7567404/backbone-js-repopulate-or-recreate-the-view/7607853#7607853)
 
@@ -68,7 +68,7 @@ Backbone.EventBinder = (function(Backbone, _){
 
     return handlerMap.default;
   }
-  
+
   // Constructor function
   var EventBinder = function(){
     this._eventBindings = [];
@@ -95,7 +95,7 @@ Backbone.EventBinder = (function(Backbone, _){
     },
 
     // Unbind from a single binding object. Binding objects are
-    // returned from the `bindTo` method call. 
+    // returned from the `bindTo` method call.
     unbindFrom: function(binding) {
       handlerMap[binding.type].unbindFrom.apply(this,arguments);
       this._eventBindings = _.reject(this._eventBindings, function(bind){return bind === binding;});
@@ -107,6 +107,14 @@ Backbone.EventBinder = (function(Backbone, _){
       // while it is being iterated, so clone it first.
       var bindings = _.map(this._eventBindings, _.identity);
       _.each(bindings, this.unbindFrom, this);
+    },
+
+    // Unbind all events registered for obj
+    unbindAllOn: function(obj){
+      var binder = this;
+      _.each(this._eventBindings, function(binding){
+        if(binding.obj === obj) binder.unbindFrom(binding);
+      });
     }
   });
 
