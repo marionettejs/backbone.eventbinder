@@ -105,6 +105,11 @@ This even works with in-line callback functions.
 
 See the wiki: [When to use the EventBinder](https://github.com/marionettejs/backbone.eventbinder/wiki/When-to-use-the-EventBinder)
 
+## Release History
+
+ - v0.1.0 Added support for jQuery style objects
+ - v0.0.0 initial release, pulled from Marionette
+
 ## License
 
 MIT - see [LICENSE.md](https://raw.github.com/marionettejs/backbone.eventbinder/master/LICENSE.md)
