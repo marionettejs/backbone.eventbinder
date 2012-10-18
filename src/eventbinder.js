@@ -17,7 +17,7 @@ Backbone.EventBinder = (function(Backbone, _){
   var handlerMap = {
     // 'default' type accounts for Backbone style objects extending
     // Backbone.Events
-    default : {
+    "default" : {
       bindTo : function (obj, eventName, callback, context) {
         context = context || this;
         obj.on(eventName, callback, context);
@@ -64,9 +64,9 @@ Backbone.EventBinder = (function(Backbone, _){
   // Use whatever best logic necessary to determine the type
   // of the supplied object
   function getHandlerForObject(obj) {
-    if (obj.jquery) return handlerMap.jquery;
+    if (obj.jquery) { return handlerMap.jquery; }
 
-    return handlerMap.default;
+    return handlerMap["default"];
   }
   
   // Constructor function
