@@ -107,6 +107,7 @@ See the wiki: [When to use the EventBinder](https://github.com/marionettejs/back
 
 ## Release History
 
+ - v1.0.0 No changes, promoted stable code to 1.0 status
  - v0.1.0 Added support for jQuery style objects
  - v0.0.0 initial release, pulled from Marionette
 
