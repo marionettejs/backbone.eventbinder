@@ -5,3 +5,4 @@ node_modules
 _SpecRunner.html
 .idea
 npm-debug.log
+*.orig
