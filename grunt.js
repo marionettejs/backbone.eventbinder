@@ -6,8 +6,9 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    pkg: '<json:package.json>',
     meta: {
-      version: '0.1.0',
+      version: '<%= pkg.version %>',
       banner: '// Backbone.EventBinder, v<%= meta.version %>\n' +
         '// Copyright (c)<%= grunt.template.today("yyyy") %> Derick Bailey, Muted Solutions, LLC.\n' + 
         '// Distributed under MIT license\n' + 
