@@ -1,0 +1,7 @@
+{
+   "name": "backbone.eventbinder",
+   "version": "1.0.1", 
+   "main": [
+      "./lib/backbone.eventbinder.js"
+   ]
+}
