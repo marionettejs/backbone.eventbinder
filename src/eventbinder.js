@@ -64,9 +64,10 @@ Backbone.EventBinder = (function(Backbone, _){
   // Use whatever best logic necessary to determine the type
   // of the supplied object
   function getHandlerForObject(obj) {
-    if (_.isUndefined(obj)) {
-      throw new Error('Can\'t bindTo undefined');
+    if (_.isUndefined(obj) || _.isNull(obj)) {
+      throw new Error("Can't bindTo undefined");
     }
+
     if (obj.jquery) { return handlerMap.jquery; }
 
     return handlerMap["default"];

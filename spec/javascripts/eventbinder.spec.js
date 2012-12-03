@@ -1,6 +1,17 @@
 describe("Default event binder logic", function(){
   var Model = Backbone.Model;
 
+  describe("when binding to undefined or null", function(){
+    var run = function(){
+      var binder = new Backbone.EventBinder();
+      binder.bindTo(null);
+    };
+
+    it("should throw an error", function(){
+      expect(run).toThrow("Can't bindTo undefined");
+    });
+  });
+
   describe("when binding an event", function(){
     var binding, binder, model;
 

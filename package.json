@@ -1,7 +1,7 @@
 {
   "name": "Backbone.EventBinder",
   "description": "Manage your Backbone event bindings better",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/marionettejs/backbone.eventbinder",
   "keywords": [
     "backbone",
