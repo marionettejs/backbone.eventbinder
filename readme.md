@@ -1,6 +1,6 @@
 # Backbone.EventBinder
 
-Manage your Backbone events better.
+Manage Backbone v0.9.2 events
 
 ## About Backbone.EventBinder
 
@@ -13,6 +13,16 @@ if you're not careful.
 Backbone.EventBinder provides a simple mechanism for cleaning up your
 event bindings, including the ability to clean up anonymous callback
 functions!
+
+## Obsolete With Backbone v0.9.9+
+
+Backbone v0.9.9 introduced two new methods to the Backbone.Events
+object: `listenTo` and `stopListening`. These methods are direct
+replacements for Backbone.EventBinder.
+
+If you are using Backbone v0.9.9 or higher, you do not need this
+plugin. This repository will stick around for those using Backbone
+v0.9.2, though.
 
 ## Downloads And Source
 
