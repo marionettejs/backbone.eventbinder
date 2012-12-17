@@ -24,6 +24,11 @@ If you are using Backbone v0.9.9 or higher, you do not need this
 plugin. This repository will stick around for those using Backbone
 v0.9.2, though.
 
+A note about context and Backbone v0.9.9: the `listenTo` and `stopListening`
+methods in v0.9.9 do not account for a context parameter. This means you
+must manually bind your callback function if you are using this version
+of Backbone.
+
 ## Downloads And Source
 
 Grab the source from the `src` folder above. Grab the most recent builds
