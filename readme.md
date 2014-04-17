@@ -2,6 +2,12 @@
 
 Manage Backbone v0.9.2 events
 
+------
+
+#### Deprecation notice: This library is deprecated as of Backbone v0.9.9
+
+------
+
 ## About Backbone.EventBinder
 
 Backbone's events are a great way to decouple parts of your system, but 
