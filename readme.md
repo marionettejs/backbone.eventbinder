@@ -1,12 +1,13 @@
+------
+
+## Deprecation notice: This library is deprecated as of Backbone v0.9.9
+
+------
+
+
 # Backbone.EventBinder
 
 Manage Backbone v0.9.2 events
-
-------
-
-#### Deprecation notice: This library is deprecated as of Backbone v0.9.9
-
-------
 
 ## About Backbone.EventBinder
 
